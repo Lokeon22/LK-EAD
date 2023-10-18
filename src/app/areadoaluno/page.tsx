@@ -18,10 +18,6 @@ export default function HomeAluno() {
             date="14/10/2023"
             text="XI SIMPÓSIO DE INICIAÇÃO CIENTÍFICA e XI ENCONTRO DE PÓS-GRADUAÇÃO da UNIMAR"
           />
-          <MiniBox date="07/10/2023" text="UNICOM - 2023 M3" />
-          <MiniBox date="01/10/2023" text="Nuap - Recado 2023" />
-          <MiniBox date="27/09/2023" text="Google I/O EXTENDED" />
-          <MiniBox date="09/08/2023" text="Jornada Profissional - M2 2023" />
         </nav>
       </div>
     </section>
