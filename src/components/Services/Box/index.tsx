@@ -2,11 +2,11 @@ import Image from "next/image";
 import example from "@/utils/w3hunt.png";
 import Link from "next/link";
 
-export function Box({ text }: { text: string }) {
+export function Box({ text, url }: { text: string; url: string }) {
   return (
     <Link
       className="w-32 h-32 bg-white flex flex-col items-center justify-center gap-3 p-4 rounded-r border-l-blue-500 border-l-[7px]"
-      href={"/"}
+      href={url}
     >
       <Image
         className="w-max rounded"

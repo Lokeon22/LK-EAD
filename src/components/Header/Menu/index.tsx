@@ -35,12 +35,13 @@ export function Menu() {
           style={{ display: menu ? "block" : "none" }}
         >
           <ul className="flex flex-col gap-1 items-start">
-            <li className="flex items-center gap-2 hover:brightness-95 hover:duration-200 w-full p-2 hover:bg-slate-100">
+            <Link
+              href={"/areadoaluno/conta"}
+              className="flex items-center gap-2 hover:brightness-95 hover:duration-200 w-full p-2 hover:bg-slate-100"
+            >
               <BiUserCircle className="min-w-[24px] min-h-[24px]" />
-              <Link className="font-medium" href={"/areadoaluno/conta"}>
-                Minha Conta
-              </Link>
-            </li>
+              <span className="font-medium">Minha Conta</span>
+            </Link>
             <li className="flex items-center gap-2 hover:brightness-95 hover:duration-200 w-full p-2 hover:bg-slate-100">
               <BiLogOut className="min-w-[24px] min-h-[24px]" />
               <Link className="font-medium" href={"/"}>
