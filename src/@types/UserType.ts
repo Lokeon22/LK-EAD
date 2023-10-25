@@ -10,4 +10,5 @@ export type UserProps = {
 export type UserLogin = {
   user: UserProps;
   token: string;
+  message: string;
 };

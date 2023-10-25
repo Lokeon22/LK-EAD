@@ -1,4 +1,8 @@
+import { LoginClient } from "@/components/LoginForm/LoginClient";
 import { LoginForm } from "@/components/LoginForm";
+import { handleRegister } from "./actions";
+
+import Image from "next/image"; // change div with bg
 
 export default function Home() {
   return (
@@ -9,8 +13,8 @@ export default function Home() {
       />
       <section className="w-full h-screen bg-gray-100 text-black col-span-1 sm:col-span-1">
         <h2 className="text-center text-3xl font-medium bg-gray-400 py-8">LK EAD</h2>
-        <LoginForm text="Sou cadastrado" btnText="Entrar" addInput={false} />
-        <LoginForm text="Fazer meu Cadastro" btnText="Continuar" addInput={true} />
+        <LoginClient />
+        <LoginForm action={handleRegister} text="Fazer meu Cadastro" btnText="Continuar" />
       </section>
     </main>
   );
