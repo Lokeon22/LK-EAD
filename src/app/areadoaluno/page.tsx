@@ -1,9 +1,13 @@
+import { getAllReminders } from "@/functions/datoCMS";
+
 import { Header } from "@/components/Header";
 import { Services } from "@/components/Services";
 import { MiniBox } from "@/components/Services/MiniBox";
 import { Box } from "@/components/Services/Box";
 
-export default function HomeAluno() {
+export default async function HomeAluno() {
+  const data = await getAllReminders();
+
   return (
     <>
       <Header />
@@ -40,10 +44,11 @@ export default function HomeAluno() {
           <h2 className="text-lg uppercase bg-[#2196f3] p-2 rounded mb-3">Meus recados</h2>
           <nav className="flex flex-col gap-2">
             {/* messages to user here CMS*/}
-            <MiniBox
-              date="14/10/2023"
-              text="XI SIMPÓSIO DE INICIAÇÃO CIENTÍFICA e XI ENCONTRO DE PÓS-GRADUAÇÃO da UNIMAR"
-            />
+            {data.map((cms) => {
+              return (
+                <MiniBox key={cms.id} date={cms.date} title={cms.title} content={cms.content} />
+              );
+            })}
           </nav>
         </div>
       </main>

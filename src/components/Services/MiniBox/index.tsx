@@ -3,7 +3,14 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-export function MiniBox({ text, date }: { text: string; date: string }) {
+interface MiniBoxType {
+  date: string;
+  title: string;
+  content: string;
+  image?: string | null;
+}
+
+export function MiniBox({ date, title, content }: MiniBoxType) {
   const [open, setOpen] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
 
@@ -18,7 +25,7 @@ export function MiniBox({ text, date }: { text: string; date: string }) {
         className="bg-white text-black flex flex-col justify-start cursor-pointer gap-1.5 px-1 py-2 rounded-r border-l-blue-500 border-l-[5px] hover:brightness-95 hover:duration-200"
       >
         <span className="text-xs">{date}</span>
-        <h2 className="text-xs flex-1 font-semibold uppercase">{text}</h2>
+        <h2 className="text-xs flex-1 font-semibold uppercase">{title}</h2>
       </div>
 
       <div
@@ -40,14 +47,10 @@ export function MiniBox({ text, date }: { text: string; date: string }) {
           </div>
           <div className="my-4">
             <span className="text-xs text-gray-500">{date}</span>
-            <h2 className="text-sm font-semibold">{text}</h2>
+            <h2 className="text-sm font-semibold">{title}</h2>
           </div>
           <div>
-            <p className="text-lg h-32 sm:h-24 overflow-auto">
-              O maior evento de tecnologia do mundo retorna no dia 22/06, organizado pelo LK GROUP e
-              pelos cursos de Análise e Desenvolvimento de Sistemas, Ciência da Computação, Jogos
-              Digitais, Ciência de Dados e Engenharias da LK EAD.
-            </p>
+            <p className="text-lg h-32 sm:h-24 overflow-auto">{content}</p>
           </div>
         </section>
       )}
