@@ -1,27 +1,17 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
+import { FaUserCircle, FaUser } from "react-icons/fa";
 
-import { UserBox } from "@/components/UserDetails/UserBox";
+import { Header } from "@/components/Header";
 import { Container } from "@/components/UserDetails/Container";
-
-import {
-  FaUserEdit,
-  FaUserCircle,
-  FaUser,
-  FaWheelchair,
-  FaLock,
-  FaGraduationCap,
-} from "react-icons/fa";
-
-import { BsPeopleFill, BsCameraFill, BsFillFileEarmarkFill } from "react-icons/bs";
-import { GiReceiveMoney } from "react-icons/gi";
-import { MdEmail, MdCreditCard } from "react-icons/md";
+import { DetailsMenu } from "@/components/UserDetails/DetailsMenu";
 
 //get user infos here
 
 export default function Conta() {
   return (
     <>
+      <Header />
       <Link
         className="flex items-center justify-center max-w-[100px] gap-2 bg-gray-400 p-4 rounded-br hover:brightness-95 hover:duration-200"
         href={"/areadoaluno"}
@@ -31,39 +21,7 @@ export default function Conta() {
       </Link>
 
       <section className="w-full h-full px-2 xl:px-4 2xl:px-8 my-4 md:my-8 flex flex-col md:grid grid-cols-6 2xl:grid-cols-8 text-black">
-        <nav className="col-span-2 lg:col-span-1 flex flex-col gap-3 justify-start items-start">
-          <UserBox text="Minha Conta" icon={<FaUserEdit className="min-w-[24px] min-h-[24px]" />} />
-          <UserBox
-            text="Responsável Legal"
-            icon={<BsPeopleFill className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox
-            text="Responsável Financeiro"
-            icon={<GiReceiveMoney className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox
-            text="Acessibilidade"
-            icon={<FaWheelchair className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox
-            text="Minha Foto"
-            icon={<BsCameraFill className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox text="Alterar senha" icon={<FaLock className="min-w-[24px] min-h-[24px]" />} />
-          <UserBox text="Alterar e-mail" icon={<MdEmail className="min-w-[24px] min-h-[24px]" />} />
-          <UserBox
-            text="Informações acadêmicas"
-            icon={<FaGraduationCap className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox
-            text="Documentação"
-            icon={<BsFillFileEarmarkFill className="min-w-[24px] min-h-[24px]" />}
-          />
-          <UserBox
-            text="Meus cartões"
-            icon={<MdCreditCard className="min-w-[24px] min-h-[24px]" />}
-          />
-        </nav>
+        <DetailsMenu />
 
         <div id="content" className="col-span-4 lg:col-span-5 2xl:col-span-7 mt-5 md:mt-0">
           <Container
@@ -77,7 +35,10 @@ export default function Conta() {
               <h2 className="uppercase font-medium text-lg">Meus dados</h2>
             </div>
 
-            <form id="container_data" className="my-5 grid grid-cols-5 gap-4">
+            <form
+              id="container_data"
+              className="my-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-4"
+            >
               <div className="flex flex-col justify-center gap-0.5">
                 <span className="text-xs text-gray-400">Nome de Exibição</span>
                 <input
@@ -109,7 +70,7 @@ export default function Conta() {
 
               <div className="flex flex-col justify-center gap-0.5">
                 <span className="text-xs text-gray-400">Profissão</span>
-                <input className="w-max px-1 py-0.5 outline-none border-b-2" type="text" />
+                <input className="px-1 py-0.5 outline-none border-b-2" type="text" />
               </div>
 
               <div className="flex flex-col justify-center gap-0.5">
@@ -135,12 +96,12 @@ export default function Conta() {
 
               <div className="flex flex-col justify-center gap-0.5">
                 <span className="text-xs text-gray-400">Nome da mãe</span>
-                <input className="w-max px-1 py-0.5 outline-none border-b-2" type="text" />
+                <input className="px-1 py-0.5 outline-none border-b-2" type="text" />
               </div>
 
               <div className="flex flex-col justify-center gap-0.5">
                 <span className="text-xs text-gray-400">Nome do pai</span>
-                <input className="w-max px-1 py-0.5 outline-none border-b-2" type="text" />
+                <input className="px-1 py-0.5 outline-none border-b-2" type="text" />
               </div>
 
               <div className="flex flex-col justify-center gap-0.5">

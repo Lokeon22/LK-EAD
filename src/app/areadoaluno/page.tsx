@@ -6,7 +6,7 @@ import { MiniBox } from "@/components/Services/MiniBox";
 import { Box } from "@/components/Services/Box";
 
 export default async function HomeAluno() {
-  const data = await getAllReminders();
+  /*const data = await getAllReminders();*/ //data from CMS, disabled on dev_mode
 
   return (
     <>
@@ -43,12 +43,12 @@ export default async function HomeAluno() {
         <div className="col-span-2 2xl:col-span-1 px-2 sm:px-0">
           <h2 className="text-lg uppercase bg-[#2196f3] p-2 rounded mb-3">Meus recados</h2>
           <nav className="flex flex-col gap-2">
-            {/* messages to user here CMS*/}
+            {/* messages to user here CMS, disabled to dev_mode*
             {data.map((cms) => {
               return (
                 <MiniBox key={cms.id} date={cms.date} title={cms.title} content={cms.content} />
               );
-            })}
+            })} */}
           </nav>
         </div>
       </main>
