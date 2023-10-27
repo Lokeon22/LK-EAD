@@ -4,7 +4,11 @@ import { Mobile } from "./Mobile";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-export function DetailsMenu() {
+export function DetailsMenu({
+  setActiveItem,
+}: {
+  setActiveItem: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleMenu = () => setOpen(!open);
@@ -25,7 +29,7 @@ export function DetailsMenu() {
         <span className="uppercase">Menu</span>
       </div>
 
-      <Mobile open={open} />
+      <Mobile open={open} setActiveItem={setActiveItem} />
     </>
   );
 }
