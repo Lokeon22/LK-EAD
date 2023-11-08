@@ -3,10 +3,13 @@ import { useState } from "react";
 import { Mobile } from "./Mobile";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { MenuProps } from "@/@types/MenusContent";
 
 export function DetailsMenu({
+  menuContent,
   setActiveItem,
 }: {
+  menuContent: MenuProps[];
   setActiveItem: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const [open, setOpen] = useState<boolean>(false);
@@ -29,7 +32,12 @@ export function DetailsMenu({
         <span className="uppercase">Menu</span>
       </div>
 
-      <Mobile open={open} setActiveItem={setActiveItem} />
+      <Mobile
+        open={open}
+        setOpen={setOpen}
+        setActiveItem={setActiveItem}
+        menuContent={menuContent}
+      />
     </>
   );
 }

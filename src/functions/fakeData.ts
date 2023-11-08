@@ -39,14 +39,37 @@ export const userItems = [
     text: "Informações acadêmicas",
     icon: "img",
   },
+];
+
+export const userCoursesItems = [
   {
-    id: 9,
-    text: "Documentação",
+    id: 1,
+    text: "Todos os cursos",
     icon: "img",
   },
   {
-    id: 10,
-    text: "Meus cartões",
+    id: 2,
+    text: "Processo seletivo",
+    icon: "img",
+  },
+  {
+    id: 3,
+    text: "Matriculados",
+    icon: "img",
+  },
+  {
+    id: 4,
+    text: "Concluídos",
+    icon: "img",
+  },
+  {
+    id: 5,
+    text: "Cancelados",
+    icon: "img",
+  },
+  {
+    id: 6,
+    text: "Transferências",
     icon: "img",
   },
 ];

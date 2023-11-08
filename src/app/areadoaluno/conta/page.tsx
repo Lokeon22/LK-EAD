@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
+import { userItems } from "@/functions/fakeData";
 
 import { Header } from "@/components/Header";
 import { DetailsMenu } from "@/components/UserDetails/DetailsMenu";
@@ -12,6 +13,7 @@ import { Legit } from "@/components/ContaDetails/Legit";
 import { Acessibility } from "@/components/ContaDetails/Accessibility";
 import { NewPassword } from "@/components/ContaDetails/NewPassword";
 import { NewEmail } from "@/components/ContaDetails/NewEmail";
+import { Academic } from "@/components/ContaDetails/Academic";
 
 //get user infos here
 
@@ -30,9 +32,12 @@ export default function Conta() {
       </Link>
 
       <section className="w-full h-full px-2 xl:px-4 2xl:px-8 my-4 md:my-8 flex flex-col md:grid grid-cols-6 2xl:grid-cols-8 text-black">
-        <DetailsMenu setActiveItem={setActiveItem} />
+        <DetailsMenu menuContent={userItems} setActiveItem={setActiveItem} />
 
-        <div id="content" className="col-span-4 lg:col-span-5 2xl:col-span-7 mt-5 md:mt-0">
+        <div
+          id="content"
+          className="col-span-4 lg:col-span-5 2xl:col-span-7 mt-5 md:mt-0"
+        >
           {activeItem !== null && (
             <>
               {activeItem === 0 && <MyAccount />}
@@ -42,6 +47,7 @@ export default function Conta() {
               {activeItem === 4 && <h2>Minha foto</h2>}
               {activeItem === 5 && <NewPassword />}
               {activeItem === 6 && <NewEmail />}
+              {activeItem === 7 && <Academic />}
             </>
           )}
         </div>

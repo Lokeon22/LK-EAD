@@ -14,11 +14,11 @@ export default async function HomeAluno() {
       <main className="w-full h-full px-2 xl:px-4 2xl:px-8 my-8 flex flex-col sm:grid grid-cols-5 2xl:grid-cols-6 gap-5">
         <nav className="col-span-3 2xl:col-span-5">
           <Services title="Meus cursos">
-            <Box text="Processo seletivo" url="/curso/processoseletivo" />
-            <Box text="Matriculados" url="/curso/matriculado" />
-            <Box text="Concluídos" url="/curso/concluido" />
-            <Box text="Cancelados" url="/curso/cancelado" />
-            <Box text="Transferências" url="/curso/transferencia" />
+            <Box id={1} text="Processo seletivo" url="/areadoaluno/curso" />
+            <Box id={2} text="Matriculados" url="/areadoaluno/curso" />
+            <Box id={3} text="Concluídos" url="/areadoaluno/curso" />
+            <Box id={4} text="Cancelados" url="/areadoaluno/curso" />
+            <Box id={5} text="Transferências" url="/areadoaluno/curso" />
           </Services>
 
           <Services title="Meus serviços">
@@ -41,7 +41,9 @@ export default async function HomeAluno() {
         </nav>
 
         <div className="col-span-2 2xl:col-span-1 px-2 sm:px-0">
-          <h2 className="text-lg uppercase bg-[#2196f3] p-2 rounded mb-3">Meus recados</h2>
+          <h2 className="text-lg uppercase bg-[#2196f3] p-2 rounded mb-3">
+            Meus recados
+          </h2>
           <nav className="flex flex-col gap-2">
             {/* messages to user here CMS, disabled to dev_mode*
             {data.map((cms) => {

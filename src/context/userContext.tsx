@@ -64,7 +64,11 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     return router.push("/areadoaluno");
   };
 
-  return <userContext.Provider value={{ user, handleLogin }}>{children}</userContext.Provider>;
+  return (
+    <userContext.Provider value={{ user, handleLogin }}>
+      {children}
+    </userContext.Provider>
+  );
 };
 
 export const useAuth = () => useContext(userContext);
