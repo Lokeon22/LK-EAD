@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import cardimage from "@/utils/w3hunt.png";
 
 interface CardProps {
+  id?: number;
   image?: string;
   title: string;
   sub_title: string;
@@ -10,9 +12,12 @@ interface CardProps {
   status: string;
 }
 
-export function Card({ title, sub_title, course_register, status }: CardProps) {
+export function Card({ id, title, sub_title, course_register, status }: CardProps) {
   return (
-    <div className="rounded-md border-2 shadow-lg">
+    <Link
+      href={`/areadoaluno/curso/${id}`}
+      className="rounded-md border-2 shadow-lg cursor-pointer hover:brightness-90 hover:duration-200"
+    >
       <div className="relative w-[270px] h-[270px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px]">
         <Image
           className="max-w-full h-auto rounded-t-md"
@@ -28,9 +33,7 @@ export function Card({ title, sub_title, course_register, status }: CardProps) {
       </div>
 
       <div className="flex flex-col gap-2 p-2">
-        <h1 className="text-sm uppercase text-[#303F9F] font-medium">
-          {sub_title}
-        </h1>
+        <h1 className="text-sm uppercase text-[#303F9F] font-medium">{sub_title}</h1>
 
         <label>
           <span className="text-sm text-[#303F9F] font-medium">Matrícula</span>
@@ -42,6 +45,6 @@ export function Card({ title, sub_title, course_register, status }: CardProps) {
           <p className="leading-5">{status}</p>
         </label>
       </div>
-    </div>
+    </Link>
   );
 }

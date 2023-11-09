@@ -1,4 +1,5 @@
 import { FaUserCircle, FaUser } from "react-icons/fa";
+import { Button } from "@/components/Button";
 
 export function MyAccount() {
   return (
@@ -51,7 +52,7 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">País de origem</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Brasil</option>
               <option>Portugal</option>
             </select>
@@ -59,7 +60,7 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Natural de qual estado?</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Minas Gerais</option>
             </select>
           </div>
@@ -76,21 +77,21 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Gênero</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Masculino</option>
             </select>
           </div>
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Estado Civil</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Solteiro(a)</option>
             </select>
           </div>
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Natural de qual cidade?</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Barbacena</option>
             </select>
           </div>
@@ -107,7 +108,7 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Cor/Raça</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Parda</option>
               <option>Branca</option>
               <option>Negra</option>
@@ -116,7 +117,7 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Origem da nacionalidade?</span>
-            <select className="w-max" name="" id="">
+            <select className="w-max p-1 rounded border-2 outline-none" name="" id="">
               <option>Nascido no País</option>
               <option>Brasil</option>
               <option>Portugal</option>
@@ -125,8 +126,14 @@ export function MyAccount() {
 
           <div className="flex flex-col justify-center gap-0.5">
             <span className="text-xs text-gray-400">Nacionalidade</span>
-            <input className="w-max px-1 py-0.5 outline-none border-b-2" type="text" />
+            <input
+              className="w-max px-1 py-0.5 outline-none border-b-2"
+              type="text"
+              name="nationality"
+            />
           </div>
+
+          <Button text="salvar" />
         </form>
         {/*form with data */}
       </section>
